@@ -1,0 +1,233 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        06/16/2017  12:09:06  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL_V5_51\C51\BIN\BL51.EXE main.obj TO usart
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  D:\KEIL_V5_51\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL_V5_51\C51\LIB\C51S.LIB (?C?CLDPTR)
+  D:\KEIL_V5_51\C51\LIB\C51S.LIB (?C?CSTPTR)
+  D:\KEIL_V5_51\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  usart (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0013H     UNIT         ?DT?MAIN
+            IDATA   001BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     002EH     UNIT         ?PR?RECEIVESTRING?MAIN
+            CODE    00BDH     002BH     UNIT         ?C?LIB_CODE
+            CODE    00E8H     0029H     UNIT         ?PR?_MY_GETCHAR?MAIN
+            CODE    0111H     001EH     UNIT         ?PR?_DELAY?MAIN
+            CODE    012FH     001BH     UNIT         ?PR?INIT_USART?MAIN
+            CODE    014AH     001AH     UNIT         ?PR?_PUTSTRING?MAIN
+            CODE    0164H     0015H     UNIT         ?PR?MAIN?MAIN
+            CODE    0179H     0008H     UNIT         ?PR?_MY_PUTCHAR?MAIN
+            CODE    0181H     0007H     UNIT         ?CO?MAIN
+            CODE    0188H     0006H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   usart (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN
+  +--> ?PR?INIT_USART?MAIN
+  +--> ?PR?_PUTSTRING?MAIN
+  +--> ?PR?_DELAY?MAIN
+
+?C_INITSEG
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/16/2017  12:09:06  PAGE 2
+
+
+  +--> ?CO?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  usart (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:012FH         PUBLIC        Init_USART
+  C:0111H         PUBLIC        _delay
+  B:00A8H.4       PUBLIC        ES
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  C:0164H         PUBLIC        main
+  C:00E8H         PUBLIC        _my_getchar
+  D:0099H         PUBLIC        SBUF
+  D:0087H         PUBLIC        PCON
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  C:014AH         PUBLIC        _PutString
+  D:0008H         PUBLIC        tab
+  D:000BH         PUBLIC        buf_string
+  C:008FH         PUBLIC        ReceiveString
+  C:0179H         PUBLIC        _my_putchar
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  -------         PROC          _MY_PUTCHAR
+  D:0007H         SYMBOL        ch
+  C:0179H         LINE#         25
+  C:0179H         LINE#         26
+  C:0179H         LINE#         27
+  C:017BH         LINE#         28
+  C:017EH         LINE#         29
+  C:0180H         LINE#         30
+  -------         ENDPROC       _MY_PUTCHAR
+  -------         PROC          _MY_GETCHAR
+  D:0001H         SYMBOL        ch
+  D:0004H         SYMBOL        WaitTime
+  -------         DO            
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:00E8H         LINE#         33
+  C:00E8H         LINE#         34
+  C:00E8H         LINE#         36
+  C:00EBH         LINE#         37
+  C:00EEH         LINE#         38
+  C:00EEH         LINE#         39
+  C:00F3H         LINE#         40
+  C:00FAH         LINE#         41
+  C:00FAH         LINE#         43
+  C:0101H         LINE#         44
+  C:0101H         LINE#         45
+  C:0106H         LINE#         46
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/16/2017  12:09:06  PAGE 3
+
+
+  C:0108H         LINE#         47
+  C:010CH         LINE#         48
+  C:010CH         LINE#         50
+  C:0110H         LINE#         51
+  -------         ENDPROC       _MY_GETCHAR
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        i
+  -------         DO            
+  D:0004H         SYMBOL        k
+  -------         ENDDO         
+  C:0111H         LINE#         53
+  C:0111H         LINE#         55
+  C:011AH         LINE#         56
+  C:012EH         LINE#         57
+  -------         ENDPROC       _DELAY
+  -------         PROC          INIT_USART
+  C:012FH         LINE#         59
+  C:012FH         LINE#         60
+  C:012FH         LINE#         61
+  C:0132H         LINE#         62
+  C:0135H         LINE#         63
+  C:0138H         LINE#         64
+  C:013BH         LINE#         65
+  C:013EH         LINE#         66
+  C:0141H         LINE#         67
+  C:0143H         LINE#         68
+  C:0145H         LINE#         69
+  C:0147H         LINE#         70
+  C:0149H         LINE#         71
+  -------         ENDPROC       INIT_USART
+  -------         PROC          _PUTSTRING
+  D:0001H         SYMBOL        TXStr
+  C:014AH         LINE#         73
+  C:014AH         LINE#         74
+  C:014AH         LINE#         75
+  C:014CH         LINE#         76
+  C:0151H         LINE#         77
+  C:0151H         LINE#         78
+  C:0153H         LINE#         79
+  C:0156H         LINE#         80
+  C:0158H         LINE#         81
+  C:015FH         LINE#         82
+  C:0161H         LINE#         83
+  C:0163H         LINE#         84
+  -------         ENDPROC       _PUTSTRING
+  -------         PROC          RECEIVESTRING
+  -------         DO            
+  D:0001H         SYMBOL        RecStr
+  D:0007H         SYMBOL        num
+  D:0006H         SYMBOL        count
+  C:0097H         SYMBOL        loop
+  -------         ENDDO         
+  C:008FH         LINE#         86
+  C:008FH         LINE#         87
+  C:008FH         LINE#         88
+  C:0095H         LINE#         89
+  C:0097H         LINE#         90
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/16/2017  12:09:06  PAGE 4
+
+
+  C:0097H         LINE#         91
+  C:0097H         LINE#         92
+  C:009CH         LINE#         93
+  C:009EH         LINE#         94
+  C:00A0H         LINE#         95
+  C:00A8H         LINE#         96
+  C:00A8H         LINE#         97
+  C:00A9H         LINE#         98
+  C:00B0H         LINE#         99
+  C:00B3H         LINE#         100
+  C:00B3H         LINE#         101
+  C:00B4H         LINE#         102
+  C:00BBH         LINE#         103
+  C:00BBH         LINE#         104
+  C:00BBH         LINE#         105
+  C:00BBH         LINE#         106
+  C:00BCH         LINE#         107
+  -------         ENDPROC       RECEIVESTRING
+  -------         PROC          MAIN
+  C:0164H         LINE#         109
+  C:0164H         LINE#         110
+  C:0164H         LINE#         111
+  C:0167H         LINE#         112
+  C:0167H         LINE#         113
+  C:0167H         LINE#         114
+  C:0170H         LINE#         115
+  C:0177H         LINE#         116
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?CLDPTR
+  C:00BDH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:00D6H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_MY_PUTCHAR?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_MY_GETCHAR?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RECEIVESTRING?MAIN
+
+Program Size: data=28.0 xdata=0 code=398
+LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)
